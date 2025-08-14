@@ -6,7 +6,34 @@ function App() {
   // Gets weather
   const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${WEATHER_KEY}`;
 
-  return <>Hello</>;
+  return (
+    <div className="app">
+      <div className="container">
+        <div className="top">
+          <div className="location">
+            <p>London</p>
+          </div>
+          <div className="temp">
+            <h1>28C</h1>
+          </div>
+          <div className="description">
+            <p>Clouds</p>
+          </div>
+        </div>
+        <div className="bottom">
+          <div className="feels">
+            <p>26C</p>
+          </div>
+          <div className="humidity">
+            <p>50%</p>
+          </div>
+          <div className="wind">
+            <p>12mph</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default App;
