@@ -14,7 +14,7 @@ function App() {
             <p>London</p>
           </div>
           <div className="temp">
-            <h1>28C</h1>
+            <h1>28°C</h1>
           </div>
           <div className="description">
             <p>Clouds</p>
