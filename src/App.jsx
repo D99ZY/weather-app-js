@@ -11,24 +11,27 @@ function App() {
       <div className="container">
         <div className="top">
           <div className="location">
-            <p>London</p>
+            <h2>London</h2>
           </div>
           <div className="temp">
             <h1>28°C</h1>
           </div>
           <div className="description">
-            <p>Clouds</p>
+            <h3>Clouds</h3>
           </div>
         </div>
         <div className="bottom">
           <div className="feels">
-            <p>26C</p>
+            <p className="bold">26°C</p>
+            <p>Feels Like</p>
           </div>
           <div className="humidity">
-            <p>50%</p>
+            <p className="bold">50%</p>
+            <p>Humidity</p>
           </div>
           <div className="wind">
-            <p>12mph</p>
+            <p className="bold">12mph</p>
+            <p>Wind Speed</p>
           </div>
         </div>
       </div>
