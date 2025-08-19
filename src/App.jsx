@@ -4,18 +4,16 @@ import axios from 'axios';
 function App() {
   // State variables
   const [geoData, setGeoData] = useState();
-  const [city, setCity] = useState('London');
+  const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState();
 
   // API Key
   const WEATHER_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-  // Gets lat and long coords
 
-  // Gets weather
-
-  // Ref to the actual <input> DOM element
+  // Ref to the <input> DOM element
   const inputRef = useRef(null);
 
+  // Gets lat and long coords for city
   const getCoords = useCallback(() => {
     if (!city) return;
     const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${WEATHER_KEY}`;
@@ -26,6 +24,7 @@ function App() {
     });
   }, [WEATHER_KEY, city]);
 
+  // Gets weather based on lat long coords
   const getWeather = useCallback(() => {
     if (!geoData) return;
 
@@ -51,19 +50,19 @@ function App() {
 
   return (
     <div className="app">
+      <div className="search">
+        <input
+          placeholder="Enter City"
+          ref={inputRef}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleSearch(e.target.value);
+            }
+          }}
+        />
+      </div>
       <div className="container">
         <div className="top">
-          <div>
-            <input
-              placeholder="Enter City Name..."
-              ref={inputRef}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  handleSearch(e.target.value);
-                }
-              }}
-            />
-          </div>
           <div className="location">
             <h2>{weatherData ? city : 'Durban'}</h2>
           </div>
