@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import axios from 'axios';
+import Search from './components/Search';
 
 function App() {
   // State variables
@@ -50,17 +51,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="search">
-        <input
-          placeholder="Enter City"
-          ref={inputRef}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              handleSearch(e.target.value);
-            }
-          }}
-        />
-      </div>
+      <Search ref={inputRef} handleSearch={handleSearch} />
       <div className="container">
         <div className="top">
           <div className="location">
