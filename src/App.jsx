@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import Search from './components/Search';
+import Top from './components/Top';
 
 function App() {
   // State variables
@@ -53,19 +54,7 @@ function App() {
     <div className="app">
       <Search ref={inputRef} handleSearch={handleSearch} />
       <div className="container">
-        <div className="top">
-          <div className="location">
-            <h2>{weatherData ? city : 'Durban'}</h2>
-          </div>
-          <div className="temp">
-            <h1>{weatherData ? Math.round(weatherData.main.temp - 273.15) : 28}°C</h1>
-          </div>
-          <div className="description">
-            <h3>
-              {weatherData ? weatherData.weather[0].main : 'Cloudy with a chance of meatballs'}
-            </h3>
-          </div>
-        </div>
+        <Top weatherData={weatherData} />
         <div className="bottom">
           <div className="feels">
             <p className="bold">
