@@ -6,8 +6,8 @@ import Bottom from './components/Bottom';
 
 function App() {
   // State variables
-  const [geoData, setGeoData] = useState();
   const [city, setCity] = useState('');
+  const [geoData, setGeoData] = useState();
   const [weatherData, setWeatherData] = useState();
 
   // API Key
@@ -55,7 +55,7 @@ function App() {
     <div className="app">
       <Search ref={inputRef} handleSearch={handleSearch} />
       <div className="container">
-        <Top weatherData={weatherData} />
+        <Top geoData={geoData} weatherData={weatherData} />
         <Bottom weatherData={weatherData} />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 function Bottom(props) {
-  const weatherData = props;
+  const { weatherData } = props;
 
   return (
     <div className="bottom">
